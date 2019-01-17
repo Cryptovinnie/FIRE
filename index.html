@@ -5,38 +5,37 @@
   <input type='text' id='id1' />
   <button onclick="myFunction()">Try it</button>
   
-  <script type="text/javascript">
-  function = myFunction(){
-   var a = document.getElementById('id1').value
-    var chart = new CanvasJS.Chart("chartContainer", {
-    
-      title:{
-        text: "Fruits sold in First Quarter"              
-      },
-      
-      data: [//array of dataSeries              
-        { //dataSeries object
+ window.onload = function () {
+var a = 1
+var chart = new CanvasJS.Chart("chartContainer", {
+ 
+  
+	theme: "light1", // "light2", "dark1", "dark2"
+	animationEnabled: false, // change to true		
+	title:{
+		text: "Basic Column Chart"
+	},
+	data: [
+	{
+		// Change type to "bar", "area", "spline", "pie",etc.
+		type: "column",
+		dataPoints: [
+			{ label: "apple",  y: a  },
+			{ label: "orange", y: 15  },
+			{ label: "banana", y: 25  },
+			{ label: "mango",  y: 30  },
+			{ label: "grape",  y: 28  }
+		]
+	}
+	]
+});
+chart.render();
 
-         /*** Change type "column" to "bar", "area", "line" or "pie"***/
-         type: "column",
-         dataPoints: [
-         { label: "banana", y: a },
-         { label: "orange", y: 29 },
-         { label: "apple", y: 40 },                                    
-         { label: "mango", y: 34 },
-         { label: "grape", y: 24 }
-         ]
-       }
-       ]
-     });
-
-    chart.render();
-  }
-  </script>
-  <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+}
+</script>
 </head>
 <body>
-  <div id="chartContainer" style="height: 300px; width: 100%;">
-  </div>
+<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"> </script>
 </body>
 </html>
