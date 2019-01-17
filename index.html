@@ -7,8 +7,9 @@
   
   <script type="text/javascript">
   function = myFunction(){
+    a = document.getElementById('id1').value
     var chart = new CanvasJS.Chart("chartContainer", {
-    id1 = document.getElementById('id1').value
+    
       title:{
         text: "Fruits sold in First Quarter"              
       },
@@ -19,7 +20,7 @@
          /*** Change type "column" to "bar", "area", "line" or "pie"***/
          type: "column",
          dataPoints: [
-         { label: "banana", y: id1 },
+         { label: "banana", y: a },
          { label: "orange", y: 29 },
          { label: "apple", y: 40 },                                    
          { label: "mango", y: 34 },
